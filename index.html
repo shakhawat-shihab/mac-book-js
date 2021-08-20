@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <!-- link bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-
     <!-- link css -->
     <link rel="stylesheet" href="css/style.css">
     <title>Mac Book Pro</title>
@@ -19,9 +19,11 @@
     <header>
         <!-- navbar -->
         <section class="">
-            <nav class="navbar navbar-light bg-light navbar-expand-lg ">
+            <nav class="navbar navbar-light bg-light navbar-expand-lg fixed-top">
                 <div class="container">
-                    <a class="navbar-brand" href="#">Navbar</a>
+                    <a class="navbar-brand" href="#">
+                        <img src="images/logo.png" alt="" width="50">
+                    </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -51,7 +53,7 @@
 
     <main>
         <!-- macbook pro section -->
-        <section class="container">
+        <section class="container mt-5 pt-5">
             <div class="row justify-content-center">
                 <div class="col-lg-4">
                     <div>
@@ -64,9 +66,12 @@
                             <h2>Customize your Blue 24-inch <br>
                                 iMac with Apple M1 chip
                             </h2>
-                            <p>Apple M1 chip with 8-core CPU with 4 performance core and 4 efficeinecy cores, 7-core GPU
+                            <p class="text-justify">
+                                Apple M1 chip with 8-core CPU with 4 performance core and 4 efficeinecy cores, 7-core
+                                GPU
                                 and 16-core Neural Engine 8 GB unified memory 256 GB SSD storage Two Thunderbolt / USB 4
-                                ports Magic MouseMagic Keyborad - US English</p>
+                                ports Magic MouseMagic Keyborad - US English
+                            </p>
                         </div>
                         <!-- Memory -->
                         <div class="my-4">
@@ -150,14 +155,11 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
             </div>
             <hr class="my-2">
             <h2 class="text-center">Total: $ <span id='total-id'> 1299</span> </h2>
-
         </section>
     </main>
 
