@@ -1,7 +1,9 @@
+//choosing elements of computer
 function componentSelection(name, price) {
     document.getElementById(name).innerText = price;
 }
 
+//calculate the sum of all the price
 function calculateSubtotal() {
     const basePrice = parseInt(document.getElementById('base-price-id').innerText);
     const memoryPrice = parseInt(document.getElementById('extra-memory-id').innerText);
@@ -46,17 +48,14 @@ document.getElementById('btn-delv2').addEventListener('click', function () {
     calculateSubtotal();
 });
 
-
-// document.getElementById('promo-input-id').addEventListener('keyup', function (event) {
-//     //console.log(event.target.value)
-//     var promoCode=event.target.value;
-//     if(promoCode.toLowerCase=='stevekaku')
-// })
+//promo code and taking 20% discount
 document.getElementById('promo-submit-id').addEventListener('click', function () {
     var promoCode = document.getElementById('promo-input-id').value;
     if (promoCode == 'stevekaku') {
         subtotal = parseInt(document.getElementById('subtotal-id').innerText);
         total = subtotal - subtotal * 0.20;
         document.getElementById('total-id').innerText = total.toFixed(2);
+        //clear the text of promocode input
+        document.getElementById('promo-input-id').value = '';
     }
-})
+});
