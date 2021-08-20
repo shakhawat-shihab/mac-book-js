@@ -1,0 +1,62 @@
+function componentSelection(name, price) {
+    document.getElementById(name).innerText = price;
+}
+
+function calculateSubtotal() {
+    const basePrice = parseInt(document.getElementById('base-price-id').innerText);
+    const memoryPrice = parseInt(document.getElementById('extra-memory-id').innerText);
+    const storagePrice = parseInt(document.getElementById('extra-storage-id').innerText);
+    const deliveryPrice = parseInt(document.getElementById('delivery-id').innerText);
+    const subtotal = basePrice + memoryPrice + storagePrice + deliveryPrice;
+    document.getElementById('subtotal-id').innerText = subtotal;
+    document.getElementById('total-id').innerText = subtotal;
+}
+
+//click event for memory select
+document.getElementById('btn-8gb').addEventListener('click', function () {
+    var price = componentSelection('extra-memory-id', 0);
+    calculateSubtotal();
+});
+document.getElementById('btn-16gb').addEventListener('click', function () {
+    var price = componentSelection('extra-memory-id', 180);
+    calculateSubtotal();
+});
+
+//click event for storage select
+document.getElementById('btn-256gb').addEventListener('click', function () {
+    var price = componentSelection('extra-storage-id', 0);
+    calculateSubtotal();
+});
+document.getElementById('btn-512gb').addEventListener('click', function () {
+    var price = componentSelection('extra-storage-id', 100);
+    calculateSubtotal();
+});
+document.getElementById('btn-1tb').addEventListener('click', function () {
+    var price = componentSelection('extra-storage-id', 180);
+    calculateSubtotal();
+});
+
+//click event for delivery select
+document.getElementById('btn-delv1').addEventListener('click', function () {
+    var price = componentSelection('delivery-id', 0);
+    calculateSubtotal();
+});
+document.getElementById('btn-delv2').addEventListener('click', function () {
+    var price = componentSelection('delivery-id', 20);
+    calculateSubtotal();
+});
+
+
+// document.getElementById('promo-input-id').addEventListener('keyup', function (event) {
+//     //console.log(event.target.value)
+//     var promoCode=event.target.value;
+//     if(promoCode.toLowerCase=='stevekaku')
+// })
+document.getElementById('promo-submit-id').addEventListener('click', function () {
+    var promoCode = document.getElementById('promo-input-id').value;
+    if (promoCode == 'stevekaku') {
+        subtotal = parseInt(document.getElementById('subtotal-id').innerText);
+        total = subtotal - subtotal * 0.20;
+        document.getElementById('total-id').innerText = total.toFixed(2);
+    }
+})
