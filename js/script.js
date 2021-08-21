@@ -15,34 +15,41 @@ function calculateSubtotal() {
 }
 
 /*click event for memory select*/
+//8 GB clicked
 document.getElementById('btn-8gb').addEventListener('click', function () {
     var price = componentSelection('extra-memory-id', 0);
     calculateSubtotal();
 });
+//16 GB clicked
 document.getElementById('btn-16gb').addEventListener('click', function () {
     var price = componentSelection('extra-memory-id', 180);
     calculateSubtotal();
 });
 
 /*click event for storage select*/
+// 256 GB clicked
 document.getElementById('btn-256gb').addEventListener('click', function () {
     var price = componentSelection('extra-storage-id', 0);
     calculateSubtotal();
 });
+// 512 GB clicked
 document.getElementById('btn-512gb').addEventListener('click', function () {
     var price = componentSelection('extra-storage-id', 100);
     calculateSubtotal();
 });
+// 1 TB clicked
 document.getElementById('btn-1tb').addEventListener('click', function () {
     var price = componentSelection('extra-storage-id', 180);
     calculateSubtotal();
 });
 
 /*click event for delivery select*/
+//Free Delivery
 document.getElementById('btn-delv1').addEventListener('click', function () {
     var price = componentSelection('delivery-id', 0);
     calculateSubtotal();
 });
+//Paid Delivery
 document.getElementById('btn-delv2').addEventListener('click', function () {
     var price = componentSelection('delivery-id', 20);
     calculateSubtotal();
