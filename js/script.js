@@ -49,13 +49,18 @@ document.getElementById('btn-delv2').addEventListener('click', function () {
     componentSelection('delivery-id', 20);
 });
 
-/*promo code and taking 20% discount*/
+/*calculate total amount after 20% discount */
+function calculateTotalWithPromo() {
+    var subTotal = parseInt(document.getElementById('subtotal-id').innerText);
+    var totalAmount = subTotal - subTotal * 0.20;
+    document.getElementById('total-id').innerText = totalAmount.toFixed(2);
+}
+
+/*promo code check on click Apply button*/
 document.getElementById('promo-submit-id').addEventListener('click', function () {
     var promoCode = document.getElementById('promo-input-id').value;
     if (promoCode.toLowerCase() == 'stevekaku') {
-        var subTotal = parseInt(document.getElementById('subtotal-id').innerText);
-        var totalAmount = subTotal - subTotal * 0.20;
-        document.getElementById('total-id').innerText = totalAmount.toFixed(2);
+        calculateTotalWithPromo();
         //clear the text of promocode input
         document.getElementById('promo-input-id').value = '';
     }
