@@ -1,6 +1,7 @@
 /* choosing components for computer */
-function componentSelection(name, price) {
-    document.getElementById(name).innerText = price;
+function componentSelection(selectId, price) {
+    document.getElementById(selectId).innerText = price;
+    calculateSubtotal();
 }
 
 /*calculate the sum of all the price*/
@@ -17,42 +18,35 @@ function calculateSubtotal() {
 /*click event for memory select*/
 //8 GB clicked
 document.getElementById('btn-8gb').addEventListener('click', function () {
-    var price = componentSelection('extra-memory-id', 0);
-    calculateSubtotal();
+    componentSelection('extra-memory-id', 0);
 });
 //16 GB clicked
 document.getElementById('btn-16gb').addEventListener('click', function () {
-    var price = componentSelection('extra-memory-id', 180);
-    calculateSubtotal();
+    componentSelection('extra-memory-id', 180);
 });
 
 /*click event for storage select*/
 // 256 GB clicked
 document.getElementById('btn-256gb').addEventListener('click', function () {
-    var price = componentSelection('extra-storage-id', 0);
-    calculateSubtotal();
+    componentSelection('extra-storage-id', 0);
 });
 // 512 GB clicked
 document.getElementById('btn-512gb').addEventListener('click', function () {
-    var price = componentSelection('extra-storage-id', 100);
-    calculateSubtotal();
+    componentSelection('extra-storage-id', 100);
 });
 // 1 TB clicked
 document.getElementById('btn-1tb').addEventListener('click', function () {
-    var price = componentSelection('extra-storage-id', 180);
-    calculateSubtotal();
+    componentSelection('extra-storage-id', 180);
 });
 
 /*click event for delivery select*/
 //Free Delivery
 document.getElementById('btn-delv1').addEventListener('click', function () {
-    var price = componentSelection('delivery-id', 0);
-    calculateSubtotal();
+    componentSelection('delivery-id', 0);
 });
 //Paid Delivery
 document.getElementById('btn-delv2').addEventListener('click', function () {
-    var price = componentSelection('delivery-id', 20);
-    calculateSubtotal();
+    componentSelection('delivery-id', 20);
 });
 
 /*promo code and taking 20% discount*/
@@ -64,5 +58,8 @@ document.getElementById('promo-submit-id').addEventListener('click', function ()
         document.getElementById('total-id').innerText = totalAmount.toFixed(2);
         //clear the text of promocode input
         document.getElementById('promo-input-id').value = '';
+    }
+    else {
+        console.log("Sorry, The Promo Code is not valid ")
     }
 });
