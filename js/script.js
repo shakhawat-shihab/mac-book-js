@@ -1,9 +1,9 @@
-//choosing elements of computer
+/* choosing components for computer */
 function componentSelection(name, price) {
     document.getElementById(name).innerText = price;
 }
 
-//calculate the sum of all the price
+/*calculate the sum of all the price*/
 function calculateSubtotal() {
     const basePrice = parseInt(document.getElementById('base-price-id').innerText);
     const memoryPrice = parseInt(document.getElementById('extra-memory-id').innerText);
@@ -14,7 +14,7 @@ function calculateSubtotal() {
     document.getElementById('total-id').innerText = subtotal;
 }
 
-//click event for memory select
+/*click event for memory select*/
 document.getElementById('btn-8gb').addEventListener('click', function () {
     var price = componentSelection('extra-memory-id', 0);
     calculateSubtotal();
@@ -24,7 +24,7 @@ document.getElementById('btn-16gb').addEventListener('click', function () {
     calculateSubtotal();
 });
 
-//click event for storage select
+/*click event for storage select*/
 document.getElementById('btn-256gb').addEventListener('click', function () {
     var price = componentSelection('extra-storage-id', 0);
     calculateSubtotal();
@@ -38,7 +38,7 @@ document.getElementById('btn-1tb').addEventListener('click', function () {
     calculateSubtotal();
 });
 
-//click event for delivery select
+/*click event for delivery select*/
 document.getElementById('btn-delv1').addEventListener('click', function () {
     var price = componentSelection('delivery-id', 0);
     calculateSubtotal();
@@ -48,13 +48,13 @@ document.getElementById('btn-delv2').addEventListener('click', function () {
     calculateSubtotal();
 });
 
-//promo code and taking 20% discount
+/*promo code and taking 20% discount*/
 document.getElementById('promo-submit-id').addEventListener('click', function () {
     var promoCode = document.getElementById('promo-input-id').value;
-    if (promoCode == 'stevekaku') {
-        subtotal = parseInt(document.getElementById('subtotal-id').innerText);
-        total = subtotal - subtotal * 0.20;
-        document.getElementById('total-id').innerText = total.toFixed(2);
+    if (promoCode.toLowerCase() == 'stevekaku') {
+        var subTotal = parseInt(document.getElementById('subtotal-id').innerText);
+        var totalAmount = subTotal - subTotal * 0.20;
+        document.getElementById('total-id').innerText = totalAmount.toFixed(2);
         //clear the text of promocode input
         document.getElementById('promo-input-id').value = '';
     }
